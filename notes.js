@@ -151,3 +151,250 @@ var capitalisedName = upperCaseFirstChar + lowerCaseRestOfName;
 
 //Step 6:  We use the capitalised version of their name to greet them using an alert.
 alert("Hello, " + capitalisedName);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Basic Arithmetic and Modulo Operation
+
+Addition:   var a = 2 + 3; //5
+Subtraction:var b = 10 - 2; //8
+Multiplication: var c = 3 * 3;//9
+Division: var d = 6 / 2; //3
+
+Modulo: var e = 9 % 6; //3    //How modulo works? It is the remainder of the numbers after it is divided.
+        var f = 5 % 2; //1
+        var g = 10 % 4; //2
+
+// Other usecase of Modulo: To determine if the number is even or odd
+45 % 2 = 1 //if the answer is 1, it is an odd number
+44 % 2 = 0 //if the answer is 0, it is an even number
+
+//Math or Arithmetic Operations in programming respects the PEMDAS(parenthesis,exponent,multiply,division,addition,subtraction) rule!
+
+//Challenge: Dog Age to Human Age formula
+
+//My Solution:
+var dogAge = prompt("How old is your Dog?");
+var humanAge = (dogAge - 2) * 4 + 21;  //use parenthesis if you want to prioritize it
+
+alert("Your dog's human age is " + humanAge)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Increment and Decrement Expressions
+
+var x = 5;
+x = x + 1; //6
+
+//is the same as 
+
+var x = 5;
+x ++; //6         //This is called Increment Expression
+
+
+var x = 5;
+x = x - 1; //4
+
+//is the same as 
+
+var x = 5;
+x --; //4         //This is called Decrement Expression
+
+//If you want to increase the increment by more than one, use this:
+
+var x = 5;
+x += 2; //7      //I want to increment x by 2
+
+
+var x = 5;
+var y = 3;
+x += y; //8     //I want to increment x by the value of y
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Functions
+
+function getMilk(bottles) {   
+    console.log("leaveHouse");   //or you can replace console.log to alert. the main difference is alert will notify the user, while console log only notifies the developer
+    console.log("moveRight");
+    console.log("moveRight");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveRight");
+    console.log("moveRight");
+    console.log("buy " + bottles + " bottles of milk");
+    console.log("moveLeft");
+    console.log("moveLeft");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveLeft");
+    console.log("moveLeft");
+    console.log("enterHouse");
+  }
+// to call this function: simply type
+getMilk();
+
+//Challenge!!!!: put how much is the budgetted money then perform a math to how much bottle will be bought with the current money
+
+function getMilk(money) {   
+    var bottleCost = 1.5;
+    var bottle = Math.floor(money / bottleCost);
+    //Math.floor is used to round a number downward to its nearest integer
+    console.log("leaveHouse");   
+    console.log("moveRight");
+    console.log("moveRight");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveRight");
+    console.log("moveRight");
+    alert("buy " + bottle + " bottles of milk using " + money + "$");
+    console.log("moveLeft");
+    console.log("moveLeft");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveLeft");
+    console.log("moveLeft");
+    console.log("enterHouse");
+  }
+getMilk(7); //output will be a round number due to the function Math.floor
+
+//Challenge: Life in weeks Coding Exercise    https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/quiz/4807840#notes
+
+//My Solution:
+function lifeInWeeks(age) {
+    
+        var x = (90 * 365) - (age * 365); 
+        var y = (90 * 52) - (age * 52);
+        var z = (90 * 12) - (age * 12);
+        console.log("You have " + x + " days, " + y + " weeks, " + "and " + z + " months left.");
+           
+    
+    }
+    lifeInWeeks(56)
+
+
+//Angela Yu's Solution:
+function lifeInWeeks(age) {
+    
+        var yearsRemaining = 90 - age; 
+        var days = yearsRemaining * 365;
+        var weeks = yearsRemaining * 52;
+        var months = yearsRemaining * 12;
+        console.log("You have " + days + " days, " + weeks + " weeks, " + "and " + months + " months left.");
+           
+    
+    }
+    lifeInWeeks(56)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Stanford Karel IDE Challenge
+
+https://stanford.edu/~cpiech/karel/ide.html
+
+//Challenge 1: move karel to upper right corner
+//My Solution:
+function main(){
+    moveToUpperRight();
+ }
+ 
+ function moveToUpperRight() {
+    move();
+    move();
+    move();
+    move();
+    turnLeft();
+    move();
+    move();
+    move();
+    move();
+    
+ }
+
+//Angela Yu's Solution:
+function main(){
+
+    moveFourTimes();
+    turnLeft();
+    moveFourTimes();
+ }
+ 
+ function moveFourTimes() {
+    move();
+    move();
+    move();
+    move();
+ }
+
+ //Challenge 2: put putBeeper diagoanally till u reach upper right corner
+ //My solution: Same as Angela Yu's
+ function main(){
+    putBeeperMoveTurnLeftMove();
+    putBeeperMoveTurnLeftMove();
+    putBeeperMoveTurnLeftMove();
+    putBeeperMoveTurnLeftMove();
+    putBeeper();
+ }
+ 
+ function putBeeperMoveTurnLeftMove() {
+    putBeeper();
+    move();
+    turnLeft();
+    move();  
+    turnRight();
+ }
+ 
+  //Challenge 2: make Karel do a chessboard pattern
+  //My solution: Same as Ms.Angela Yu's
+  function main(){
+    moveToRightWhilePutBeeper();
+    moveNorthFromRight();
+    moveToLeftWhilePutBeeper();
+    moveNorthFromLeft();
+    moveToRightWhilePutBeeper();
+    moveNorthFromRight();
+    moveToLeftWhilePutBeeper();
+    moveNorthFromLeft();
+    moveToRightWhilePutBeeper();
+ }
+ 
+ function moveToRightWhilePutBeeper() {
+    putBeeper();
+    move();
+    move();
+    putBeeper();
+    move();
+    move();
+    putBeeper();
+ }
+ 
+ function moveNorthFromRight() {
+    turnLeft();
+    move();
+    turnLeft();
+ }
+ function moveToLeftWhilePutBeeper() {
+    move();
+    putBeeper();
+    move();
+    move();
+    putBeeper();
+    move();
+ }
+ 
+ function moveNorthFromLeft() {
+    turnRight();
+    move();
+    turnRight();
+ }
+
+
+
+
+
+
+
+
