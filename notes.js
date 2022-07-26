@@ -69,4 +69,85 @@ var tweetLeft = 180-tweet.length
 
 alert("You have written " + tweetWritten + " characters, you have " + tweetLeft + " characters left.")
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Slicing and Extracting parts of a string
 
+// Funtion called slice :    "variable".slice(x,y)
+
+var name = "Erskine";
+name.slice(0,1);         //programmers always count starting from 0 to n
+
+output: "E"
+
+var name = "Erskine";
+name.slice(5,6);
+
+output: "n"
+
+var name = "Erskine";
+name.slice(0,3);
+
+output: "Ers"
+
+var name = "Erskine";
+name.slice(1,5);
+
+output: "rski"
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Challenge: a tweet that cuts down to 140 characters.
+
+var tweet = prompt("Compose your tweet:");
+var tweetUnder140 = tweet.slice(0,140);
+
+alert(tweetUnder140)
+
+//alternative solution (shorter solution!)
+
+alert(prompt("Compose your tweet:").slice(0,140));
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Upper Case or Lower Case
+
+var name = "Erskine";
+name.toUpperCase();       //DONT FORGET THE OPEN AND CLOSE PARENTHESIS!!!!!
+
+output: "ERSKINE"
+
+var name = "Erskine";
+name.toLpperCase();
+
+output: "erskine"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Challenge: make the name showing in alert to capitalize only the First Letter
+
+//MySolution:
+var name = prompt("What is your name?");
+var firstLetter = name.slice(0,1);
+var firstUpperLetter = firstLetter.toUpperCase();
+
+alert("Hello, " + firstUpperLetter + name.slice(1,100) +"!")
+
+input: "erskine"      output: "Hello, Erskine!"
+
+//AngelaYu'sSolution: 
+//Step 1: Create a var that stores the name that user enters via prompt
+var name = prompt("What is your name?")
+
+//Step 2: Capitalize the first letter of their name
+    //Step 3: Isolate the first char
+    var firstChar = name.slice(0,1);
+
+    //Step 4: Turn the first char to upper case
+    var upperCaseFirstChar = firstChar.toUpperCase();
+
+//Step 5: Isolate the rest of the name
+var restOfName = name.slice(1,name.length);
+
+//Step 6: Turn the rest of the name to lower case
+var lowerCaseRestOfName = restOfName.toLowerCase();
+
+//Step 7: Concactenate the first char with the rest of the char
+var capitalisedName = upperCaseFirstChar + lowerCaseRestOfName;
+
+//Step 6:  We use the capitalised version of their name to greet them using an alert.
+alert("Hello, " + capitalisedName);
