@@ -266,6 +266,12 @@ getMilk(7); //output will be a round number due to the function Math.floor
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Output & Return Value
 
+function aFunction(a, b){
+   return a * b;              //return means it is the end of the function when it assigns the operation inside the function
+}
+   aFunction(3,4); //output: 12
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function getMilk(money, costPerBottle) {   
    console.log("leaveHouse");   
    console.log("moveRight");
@@ -296,7 +302,7 @@ function calcBottles(startingMoney, costPerBottle) {
 
    var numberOfBottles = Math.floor(startingMoney / costPerBottle);
 
-   return numberOfBottles;
+   return numberOfBottles;                 //return means it is the end of the function when it assigns the operation inside the function
 }
 
 function calcChange(startingAmount, costPerBottle) {
@@ -306,6 +312,20 @@ function calcChange(startingAmount, costPerBottle) {
 
 console.log("Hello master, here is your " +getMilk(5, 1.5) + " change."); 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Challenge!!!!
+//BMI Calculator
+
+//angela yu's soln
+function bmiCalculator(weight, height) {
+    
+   var bmi = weight / (height * height);            // the formula of bmi is weight divide by the height^squared
+
+   return Math.round(bmi);                          //Math.round is used to round off numbers
+}
+
+var bmi = bmiCalculator(65, 1.8);
+console.log(bmi);      
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -438,9 +458,116 @@ function main(){
  }
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Random Number Generator
+
+var n = Math.random();
+console.log(n);     //the output generates a random number upto 16 decimal places but but not greater or equal than 1, but it can be 0
 
 
+//Pseudo Random Generator
+
+var n = Math.random();     
+n = n * 6;                 //this limits the random number upto (0 to 5.99) but not 6
+n = Math.floor(n) + 1;     //Math.floor is used to get the floor number and shave the decimal place     //+1 is used so that the range becomes 1-6 instead of 0-5
+console.log(n);  
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Challenge: Make a love calculator using RNG
 
+//My solution:
+prompt("Hi! What is your name?");
+
+prompt("2nd Question. What is your partner's name?");
+
+var n = Math.random();
+n = n * 100;               //100, to make the RNG choose 0-99.9999999
+n = Math.floor(n) + 1;     //math floor, to make the output whole number         //+1, to make the RNG range to 1-100
+
+alert("Your love score is " + n);
+
+// Angela Yu's Solution
+prompt("What is your name?");
+prompt("What is their name?");
+
+var loveScore = Math.random() * 100;
+loveScore = Math.floor(loveScore) + 1;
+alert("Your love score is " + loveScore);   
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Control Statements: Using If-Else conditions & Logic
+
+prompt("What is your name?");
+prompt("What is their name?");
+
+var loveScore = Math.random() * 100;
+loveScore = Math.floor(loveScore) + 1; //1-100
+
+if (loveScore > 70) {
+   alert("Your love score is " + loveScore + "%" + " You love each other like Kanye loves Kanye.");  
+}  
+else {
+   alert("Your love score is " + loveScore + "%");  
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Comparators and Equality
+                                      //example of data types: "string" "number" "boolean". you can check the data type using typeof();
+/* === Is equal to                    // ===, the data type matters while  ==, the data type doesnt matter
+   !== Is not equal to                // above is the difference between === and ==
+   >   Is greater than
+   <   Is lesser than
+   >=  Is greater or equal to
+   <=  Is lesser or equal to 
+   &&  AND
+   ||  OR  
+   !   NOT (or the opposite of something)
+*/
+
+
+prompt("What is your name?");
+prompt("What is their name?");
+
+var loveScore = Math.random() * 100;
+loveScore = Math.floor(loveScore) + 1; //1-100
+
+if (loveScore > 70) {
+   alert("Your love score is " + loveScore + "%" + ". You love each other like Kanye loves Kanye.");  
+}
+if (loveScore > 30 && loveScore <= 70) {                 //&& is used to implement AND
+   alert("Your love score is " + loveScore + "%");  
+}   
+if (loveScore <= 30) {
+   alert("Your love score is " + loveScore + "%" + ". You go together like oil and water."); 
+}  
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Challenge: BMI calculator Advanced (IF/ELSE)
+
+// My solution:
+function bmiCalculator(weight, height) {
+    
+   var bmi = weight / (height * height);            // the formula of bmi is weight divide by the height^squared
+
+   return Math.round(bmi);                          //Math.round is used to round off numbers
+}
+
+var bmi = bmiCalculator(65, 1.8);
+
+if (bmi < 18.5) {
+   console.log("Your BMI is " + bmi + ", so you are underweight.");  
+}
+if (bmi >= 18.5 && bmi <= 24.9) {
+   console.log("Your BMI is " + bmi + ", so you have a normal weight.");  
+}
+if (bmi > 24.9) {
+   console.log("Your BMI is " + bmi + ", so you are overweight.");  
+}
+
+// Angela Yu's Solution: NO soln given, but my answer is correct
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Challenge: Leap Year Challenge Exercise          https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/quiz/4807956#content
 
