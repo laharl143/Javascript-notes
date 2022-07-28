@@ -645,3 +645,47 @@ if (guestList.includes(guestName)) {
 } else {
     alert("Sorry, maybe next time")
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// .push & .pop
+
+
+var output = [];
+var count = 1;
+
+function fizzBuzz() {
+output.push(count);                // .push means adding an element to the array
+count++;                           // ++ means increment by 1
+    
+    console.log(output);
+}
+
+// output every fizzBuzz() input; [1]
+//                                [1, 2]
+//                                [1, 2, 3]
+
+//Challenge!!: FizzBuzz challenge ; If the number is a multiple of 3, it should print "Fizz". If the number is multiple of 5, it should print "Buzz". 
+//                                  If the number is a multiple of both 5 & 3, it should print "FizzBuzz"
+var output = [];
+var count = 1;
+
+function fizzBuzz() {
+
+if (count % 3 === 0 && count % 5 === 0) {
+    output.push("FizzBuzz");
+}
+else if (count % 3 === 0) {
+    output.push("Fizz");
+}       
+else if (count % 5 === 0) {
+    output.push("Buzz");
+} 
+else {
+    output.push(count);
+}
+
+count++;
+    
+    console.log(output);
+}
+// output: [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz', 16, 17, 'Fizz', 19, 'Buzz', 'Fizz', 22]
