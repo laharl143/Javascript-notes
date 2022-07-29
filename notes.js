@@ -705,8 +705,145 @@ function whosPaying(names) {
    
 }
 
-//input in console: whosPaying(names)
+//input in console: whosPaying(names);
 
 //output: "Jack is going to buy lunch today!"          //Note!: the output will be random from the selected variables in the [names] array
 //        "Jason is going to buy lunch today!"
 //        "Pam is going to buy lunch today!"
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// While Loops
+
+
+var output = [];
+var count = 1;
+
+function fizzBuzz() {
+
+while(count <= 100) {                     // this is the while loop. it will run the code inside its bracket if the given condition is true; like here less than or equal to 100
+
+if (count % 3 === 0 && count % 5 === 0) { 
+    output.push("FizzBuzz");
+}
+else if (count % 3 === 0) {
+    output.push("Fizz");
+}       
+else if (count % 5 === 0) {
+    output.push("Buzz");
+} 
+else {
+    output.push(count);
+}
+
+count++;
+}                                         // this is the closed bracket of the while loop
+    console.log(output);
+}
+
+//input in console: fizzBuzz();
+
+//output: [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz', 16, 17, 'Fizz', 19, 'Buzz', 'Fizz', 22, 23, 'Fizz', 'Buzz', 26, 'Fizz', 28, 29, 'FizzBuzz', 31, 32, 'Fizz', 34, 'Buzz', 'Fizz', 37, 38, 'Fizz', 'Buzz', 41, 'Fizz', 43, 44, 'FizzBuzz', 46, 47, 'Fizz', 49, 'Buzz', 'Fizz', 52, 53, 'Fizz', 'Buzz', 56, 'Fizz', 58, 59, 'FizzBuzz', 61, 62, 'Fizz', 64, 'Buzz', 'Fizz', 67, 68, 'Fizz', 'Buzz', 71, 'Fizz', 73, 74, 'FizzBuzz', 76, 77, 'Fizz', 79, 'Buzz', 'Fizz', 82, 83, 'Fizz', 'Buzz', 86, 'Fizz', 88, 89, 'FizzBuzz', 91, 92, 'Fizz', 94, 'Buzz', 'Fizz', 97, 98, 'Fizz', 'Buzz']
+
+
+///Challenge!!: 99 bottles of beer on the wall.
+
+// My solution: This is wrong btw! This is wrong btw!This is wrong btw!This is wrong btw! This is wrong btw! This is wrong btw!
+var output = [];
+var count = 1;
+var numberOfBottles = 99
+function beer() {
+
+while(count < 100) {                     
+
+console.log(numberOfBottles + " bottles of beer on the wall, " + numberOfBottles + " bottles of beer. Take 1 down, pass it around, " + (numberOfBottles-1) + " bottles of beer on the wall.")
+
+count--;
+}                                         
+
+}
+
+
+// Angela Yu's Solution:
+
+function beer() {
+var numberOfBottles = 99                                   //a variable for number of bottles is created and set to 99
+while (numberOfBottles >= 0) {                             // this line of code means the loop will continue while numberOfBottles is greater than or eqaul to 0
+    var bottleWord = "bottle";                             // a variable for the word bottle
+    if (numberOfBottles === 1) {
+        bottleWord = "bottles";
+    } 
+    console.log(numberOfBottles + " " + bottleWord + " of beer on the wall");
+    console.log(numberOfBottles + " " + bottleWord + " of beer,");
+    console.log("Take one down, pass it around,");
+	numberOfBottles--;
+    console.log(numberOfBottles + " " + bottleWord + " of beer on the wall.");
+}
+
+}
+
+// This is my improved version and grammar correction:
+
+function beer(){
+   var bottles = 100;
+   while(bottles >= 2){
+       console.log(bottles + " bottles of beer on the wall, " + bottles + " bottles of beer. Take one down and pass it around, " + --bottles + " bottles of beer on the wall.");
+   }   
+  
+   if (bottles === 1) {
+      console.log("1 bottle of beer on the wall, 1 bottle of beer. Take one down and pass it around, no more bottles of beer on the wall.")
+       bottles--;
+   }
+  
+   if (bottles === 0) {
+      console.log("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 more bottles of beer on the wall.")
+   }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// While Loops vs For Loops
+
+// while loops:
+
+var i = 1;
+
+while(i < 2) {
+   console.log(i);
+   i++;
+}
+
+// for loops:
+
+for(var i = 1; i < 2; i++) {                   //for (start; end; indentation(++ or --))       <-----for loop structure
+   console.log(i);
+}
+
+
+// Fizzbuzz For Loop version:
+
+var output = [];
+
+function fizzBuzz() {
+
+for(var count = 1; count <= 100; count++) {                           //this is the for loop
+                                                                      // pro tip: for loop is more preferred than while loop
+if (count % 3 === 0 && count % 5 === 0) { 
+    output.push("FizzBuzz");
+}
+else if (count % 3 === 0) {
+    output.push("Fizz");
+}       
+else if (count % 5 === 0) {
+    output.push("Buzz");
+} 
+else {
+    output.push(count);
+}
+
+}                                        
+    console.log(output);
+}
+
+//input in console: fizzBuzz();
+
+//output: [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz', 16, 17, 'Fizz', 19, 'Buzz', 'Fizz', 22, 23, 'Fizz', 'Buzz', 26, 'Fizz', 28, 29, 'FizzBuzz', 31, 32, 'Fizz', 34, 'Buzz', 'Fizz', 37, 38, 'Fizz', 'Buzz', 41, 'Fizz', 43, 44, 'FizzBuzz', 46, 47, 'Fizz', 49, 'Buzz', 'Fizz', 52, 53, 'Fizz', 'Buzz', 56, 'Fizz', 58, 59, 'FizzBuzz', 61, 62, 'Fizz', 64, 'Buzz', 'Fizz', 67, 68, 'Fizz', 'Buzz', 71, 'Fizz', 73, 74, 'FizzBuzz', 76, 77, 'Fizz', 79, 'Buzz', 'Fizz', 82, 83, 'Fizz', 'Buzz', 86, 'Fizz', 88, 89, 'FizzBuzz', 91, 92, 'Fizz', 94, 'Buzz', 'Fizz', 97, 98, 'Fizz', 'Buzz']
