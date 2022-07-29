@@ -671,7 +671,7 @@ var count = 1;
 
 function fizzBuzz() {
 
-if (count % 3 === 0 && count % 5 === 0) {
+if (count % 3 === 0 && count % 5 === 0) { 
     output.push("FizzBuzz");
 }
 else if (count % 3 === 0) {
@@ -689,3 +689,24 @@ count++;
     console.log(output);
 }
 // output: [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz', 16, 17, 'Fizz', 19, 'Buzz', 'Fizz', 22]
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Challenge!: Who's buying lunch? Code challenge.
+
+var names = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"]          // this is the variables included
+
+function whosPaying(names) {
+
+   var numberOfPeople = names.length;                                     //calculate how many names are there           
+   var randomPersonPosition = Math.floor(Math.random() * numberOfPeople); // (Math.random() * numberOfPeople) = picks from [0-4.9999]  ; Math.floor shaves the decimal
+   var randomPerson = names[randomPersonPosition];                        //square bracket is used to choose from an array
+
+   return randomPerson + " is going to buy lunch today!";                 //this is the output
+   
+}
+
+//input in console: whosPaying(names)
+
+//output: "Jack is going to buy lunch today!"          //Note!: the output will be random from the selected variables in the [names] array
+//        "Jason is going to buy lunch today!"
+//        "Pam is going to buy lunch today!"
