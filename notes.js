@@ -847,3 +847,38 @@ else {
 //input in console: fizzBuzz();
 
 //output: [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz', 16, 17, 'Fizz', 19, 'Buzz', 'Fizz', 22, 23, 'Fizz', 'Buzz', 26, 'Fizz', 28, 29, 'FizzBuzz', 31, 32, 'Fizz', 34, 'Buzz', 'Fizz', 37, 38, 'Fizz', 'Buzz', 41, 'Fizz', 43, 44, 'FizzBuzz', 46, 47, 'Fizz', 49, 'Buzz', 'Fizz', 52, 53, 'Fizz', 'Buzz', 56, 'Fizz', 58, 59, 'FizzBuzz', 61, 62, 'Fizz', 64, 'Buzz', 'Fizz', 67, 68, 'Fizz', 'Buzz', 71, 'Fizz', 73, 74, 'FizzBuzz', 76, 77, 'Fizz', 79, 'Buzz', 'Fizz', 82, 83, 'Fizz', 'Buzz', 86, 'Fizz', 88, 89, 'FizzBuzz', 91, 92, 'Fizz', 94, 'Buzz', 'Fizz', 97, 98, 'Fizz', 'Buzz']
+
+
+
+// Challenge!!! Fibonacci Challenge
+
+function fibonacciGenerator (n) {
+
+    var output = [];                 // this is the 0 in the line of array
+    if (n === 1) {
+        output = [0];
+    }
+    else if (n === 2) {              // this is the 1 in the line of array
+        output = [0, 1];
+    }
+    else {                           // this is the 3rd and fourth in the line of array
+        output = [0, 1];
+
+        for (var i = 2; i < n; i++) {           // this is a for loop command: the 2nd to the last and the last in the line of array
+            output.push(output[output.length - 2] + output[output.length - 1]); 
+        }
+
+    }
+
+    return output;
+}
+
+output = fibonacciGenerator(10);
+console.log(output)
+
+// input in console: fibonacciGenerator(10)
+// output: (10) [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+// input in console: fibonacciGenerator(11)
+// output: (11) [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+
