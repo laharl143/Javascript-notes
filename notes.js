@@ -1,4 +1,4 @@
-alert(Erskine);          //notes
+alert(Erskine);          //note writing
 typeof(23);
 "number"
 typeof("Angela");
