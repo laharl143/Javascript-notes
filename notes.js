@@ -1,4 +1,4 @@
-alert(Erskine);          //note writing
+alert(Erskine);
 typeof(23);
 "number"
 typeof("Angela");
@@ -882,3 +882,22 @@ console.log(output)
 // input in console: fibonacciGenerator(11)
 // output: (11) [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Simple calculator
+
+
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+function calculator(num1, num2, operator) {
+    return operator(num1 + num2);
+}
+//input in console: calculator(4,5,add);
+//output: 9
+//input in console: calculator(4,5,multiply);
+//output: 20
