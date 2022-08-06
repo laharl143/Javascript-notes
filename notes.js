@@ -909,3 +909,89 @@ function calculator(num1, num2, operator) {
 //output: 9
 //input in console: calculator(4,5,multiply);
 //output: 20
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Javascript Objects
+
+var houseKeeper1 = {
+    yearsOfExperience: 12,
+    name: "Jane",
+    cleaningRepertoire: ["bathroom", "lobby", "bedroom"]
+}
+
+//input in console: houseKeeper1;
+//output: {yearsOfExperience: 12, name: 'Jane', cleaningRepertoire: Array(3)}
+//input in console: houseKeeper1.name;
+//output: Jane
+//input in console: houseKeeper1.yearsOfExperience;
+//output: 12
+
+//Constructor Function
+//convert the above var to constructor function
+
+         //take note! the first letter in HouseKeeper should be capitalized since it is in constructor function
+function HouseKeeper (yearsOfExperience, name, cleaningRepertoire) {
+    this.yearsOfExperience = yearsOfExperience;                              //this. is used to create new method or property
+    this.name = name;
+    this.cleaningRepertoire = cleaningRepertoire;
+}
+
+//input in console: var houseKeeper1 = new HouseKeeper(9, "Tom", ["lobby", "bedroom"]);        <---- this input is to add a data to the constructor function template above
+//output: undefined
+//input in console: console.log(houseKeeper1.name)
+//output: Tom
+
+
+
+
+// you should be using the keydown event listener instead of keypress.
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// jQuery
+
+
+// DOM manipulation                     vs         Jquery
+
+
+document.querySelector("h1")         is        $("h1")     //<---------- this is the jquery equivalent
+
+document.querySelectorAll("button")  is        $("button") //<---------- this is the jquery equivalent
+
+
+
+//Manipulating jQuery
+
+$("h1").css("font-size");                   // if you have only one property, you are getting the value of it
+
+$("h1").css("font-size", "5rem");          // if you have two property, you are setting the value of it
+
+
+$("h1").addClass("big-title");        //use to addclass
+
+$("h1").removeClass("big-title");     //use to remove class
+
+$("h1").text("Bye");                 //use to change the text
+
+$("h1").html("<em>Bye</em>");        //this can include tags
+
+$("h1").attr("href", "https://www.yahoo.com");        //this changes the attribute of href to the second property you put
+
+$("h1").click("function"() {            // this is the equivalent to addEventListener
+    $("h1").css("color", "purple");
+})
+
+//for loop DOM manipulation vs jQuery
+for (var i = 0; i<5; i++) {
+    document.querySelectorAll("button")[i].addEventListener("click", function(){
+        document.querySelector("h1").style.color = "purple";    
+    });
+}
+
+is equal to 
+
+$("button").click(function() {
+    $("h1").css("color", "purple");
+});
